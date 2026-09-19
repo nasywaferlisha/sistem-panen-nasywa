@@ -1,14 +1,11 @@
 # Sistem Pencatatan Hasil Panen Digital
 
 ## Deskripsi
-Program sederhana untuk menghitung total hasil panen dan menghitung total setelah diskon.
+Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dan menghitung total hasil panen setelah diskon.
 
 ## Cara Menjalankan Program
-Program dapat dijalankan menggunakan Python dengan perintah:
+1. Pastikan Python sudah terpasang.
+2. Buka terminal pada folder proyek.
+3. Jalankan program dengan perintah:
 
 python panen.py
-
-## Fitur
-- Menghitung total hasil panen
-- Menghitung diskon
-- Menampilkan total setelah diskon# sistem-panen-nasywa
