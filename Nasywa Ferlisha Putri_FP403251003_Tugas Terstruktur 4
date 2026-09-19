@@ -1,0 +1,1403 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOfwJ7Mtztoc526VhQ5qaDK",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/nasywaferlisha/sistem-panen-nasywa/blob/main/Nasywa%20Ferlisha%20Putri_FP403251003_Tugas%20Terstruktur%204\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QB0AAhMATxu-",
+        "outputId": "3c80c832-8a4a-4598-ab31-7990243b57a4"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "/content/sistem-panen\n"
+          ]
+        }
+      ],
+      "source": [
+        "!mkdir -p /content/sistem-panen\n",
+        "%cd /content/sistem-panen"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile panen.py\n",
+        "\n",
+        "hasil_panen = [10, 15, 20, 12]\n",
+        "\n",
+        "total_panen = sum(hasil_panen)\n",
+        "\n",
+        "print(\"Hasil panen:\", hasil_panen)\n",
+        "print(\"Total hasil panen:\", total_panen, \"kg\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Tfe68v-XT30L",
+        "outputId": "a7971db3-672e-430e-b947-e4f65b1d48b8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!python panen.py"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mZltQ0U2T6iH",
+        "outputId": "921c1551-c89d-40e9-bbe0-504875eb30b0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hasil panen: [10, 15, 20, 12]\n",
+            "Total hasil panen: 57 kg\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git init"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8TaniLMRT8br",
+        "outputId": "2dadd21c-5360-4654-9c70-48dc219a713f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33mhint: Using 'master' as the name for the initial branch. This default branch name\u001b[m\n",
+            "\u001b[33mhint: is subject to change. To configure the initial branch name to use in all\u001b[m\n",
+            "\u001b[33mhint: of your new repositories, which will suppress this warning, call:\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: \tgit config --global init.defaultBranch <name>\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\u001b[m\n",
+            "\u001b[33mhint: 'development'. The just-created branch can be renamed via this command:\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: \tgit branch -m <name>\u001b[m\n",
+            "Initialized empty Git repository in /content/sistem-panen/.git/\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch -M main"
+      ],
+      "metadata": {
+        "id": "dBK6dz8fT-VV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git config user.name \"Nasywa Ferlisha Putri\"\n",
+        "!git config user.email \"nasywaferlisha@apps.ipb.ac.id\""
+      ],
+      "metadata": {
+        "id": "zncKijYrUArb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git config user.name\n",
+        "!git config user.email"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6ZZ7GDzXUCeO",
+        "outputId": "34b41b2d-9a16-4915-f2e8-e68aae2fa995"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nasywa Ferlisha Putri\n",
+            "nasywaferlisha@apps.ipb.ac.id\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4V_KQXrMUErT",
+        "outputId": "9161163f-ba62-4a01-8c17-fa68e7aa927e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch main\n",
+            "\n",
+            "No commits yet\n",
+            "\n",
+            "Untracked files:\n",
+            "  (use \"git add <file>...\" to include in what will be committed)\n",
+            "\t\u001b[31mpanen.py\u001b[m\n",
+            "\n",
+            "nothing added to commit but untracked files present (use \"git add\" to track)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add panen.py"
+      ],
+      "metadata": {
+        "id": "402XWZ__UGsv"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \"Menambahkan program penghitung total hasil panen\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xGoHpVHCUIbw",
+        "outputId": "3068d129-2185-4d66-c356-4f78b2d031e0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[main (root-commit) 3340bff] Menambahkan program penghitung total hasil panen\n",
+            " 1 file changed, 7 insertions(+)\n",
+            " create mode 100644 panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git log --oneline --decorate --all"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H9lp2ACHUPNV",
+        "outputId": "e2ff8bb4-cd15-4fb1-da85-c959216c9bd8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33m3340bff\u001b[m\u001b[33m (\u001b[m\u001b[1;36mHEAD\u001b[m\u001b[33m -> \u001b[m\u001b[1;32mmain\u001b[m\u001b[33m)\u001b[m Menambahkan program penghitung total hasil panen\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch -c fitur-diskon"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Twt8hijSURMr",
+        "outputId": "871b45ae-3c24-4ba3-e8ea-00c0f649ac5e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to a new branch 'fitur-diskon'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "05ur7A1PUTRN",
+        "outputId": "eb604332-74f1-49f8-e5c6-8efd4f84545e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "* \u001b[32mfitur-diskon\u001b[m\n",
+            "  main\u001b[m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile panen.py\n",
+        "\n",
+        "hasil_panen = [10, 15, 20, 12]\n",
+        "\n",
+        "total_panen = sum(hasil_panen)\n",
+        "\n",
+        "\n",
+        "def hitung_diskon(total, persen):\n",
+        "    diskon = total * persen / 100\n",
+        "    return total - diskon\n",
+        "\n",
+        "\n",
+        "persen_diskon = 10\n",
+        "total_setelah_diskon = hitung_diskon(total_panen, persen_diskon)\n",
+        "\n",
+        "print(\"Hasil panen:\", hasil_panen)\n",
+        "print(\"Total hasil panen:\", total_panen, \"kg\")\n",
+        "print(\"Diskon:\", persen_diskon, \"%\")\n",
+        "print(\"Total setelah diskon:\", total_setelah_diskon, \"kg\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XbKCV0iBUZG6",
+        "outputId": "44006c3d-045d-459d-d8db-24b8caaf022a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!python panen.py"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "45dzIunwUa-s",
+        "outputId": "589dc67a-c6e3-4a27-e101-fcbcf4d40b6d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hasil panen: [10, 15, 20, 12]\n",
+            "Total hasil panen: 57 kg\n",
+            "Diskon: 10 %\n",
+            "Total setelah diskon: 51.3 kg\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add panen.py"
+      ],
+      "metadata": {
+        "id": "w5g1PBDLUdGq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \"Menambahkan fungsi perhitungan diskon\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C-MziJCUUh5N",
+        "outputId": "8e9a5733-4233-4c96-ac0b-26bfe36930fb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[fitur-diskon 045c6cf] Menambahkan fungsi perhitungan diskon\n",
+            " 1 file changed, 11 insertions(+)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wGKDofdTUh1z",
+        "outputId": "cb63c192-65fd-4544-c3ee-08153094c749"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to branch 'main'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GYqN87uaUhzL",
+        "outputId": "5d2701ad-bf46-4e4c-f297-7b0c076b030b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  fitur-diskon\u001b[m\n",
+            "* \u001b[32mmain\u001b[m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git merge fitur-diskon"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UleQUKEMUhw4",
+        "outputId": "3587d222-d7c5-4552-a8c3-2f38a83715c1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Updating 3340bff..045c6cf\n",
+            "Fast-forward\n",
+            " panen.py | 11 \u001b[32m+++++++++++\u001b[m\n",
+            " 1 file changed, 11 insertions(+)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!python panen.py"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GgloLaOiUhu2",
+        "outputId": "9a94476a-0dcc-4843-e918-33ff8bc37afa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hasil panen: [10, 15, 20, 12]\n",
+            "Total hasil panen: 57 kg\n",
+            "Diskon: 10 %\n",
+            "Total setelah diskon: 51.3 kg\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7JjtOmbiUhlt",
+        "outputId": "e64b6228-e1d5-4d18-f42d-eb9a3c7cebe1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch main\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git log --oneline --decorate --all"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R7j3HYqtUhiV",
+        "outputId": "2132e712-0611-41d1-c20c-216ffcdf4aa6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33m045c6cf\u001b[m\u001b[33m (\u001b[m\u001b[1;36mHEAD\u001b[m\u001b[33m -> \u001b[m\u001b[1;32mmain\u001b[m\u001b[33m, \u001b[m\u001b[1;32mfitur-diskon\u001b[m\u001b[33m)\u001b[m Menambahkan fungsi perhitungan diskon\n",
+            "\u001b[33m3340bff\u001b[m Menambahkan program penghitung total hasil panen\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile README.md\n",
+        "\n",
+        "# Sistem Pencatatan Hasil Panen Digital\n",
+        "\n",
+        "## Deskripsi\n",
+        "\n",
+        "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dari beberapa data hasil panen. Program juga memiliki fitur perhitungan diskon sebesar 10%.\n",
+        "\n",
+        "## Cara Menjalankan Program\n",
+        "\n",
+        "1. Pastikan Python sudah terpasang.\n",
+        "2. Buka terminal pada folder proyek.\n",
+        "3. Jalankan program dengan perintah:\n",
+        "\n",
+        "```bash\n",
+        "python panen.py"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lwwyDzqZUheS",
+        "outputId": "6de6a3b5-cc05-4621-b7d8-c07dfca343c3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing README.md\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!cat README.md"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IqAFl8DYUhXG",
+        "outputId": "3f98dea5-2a6e-4322-fe4d-e0f26fbaf6dd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "# Sistem Pencatatan Hasil Panen Digital\n",
+            "\n",
+            "## Deskripsi\n",
+            "\n",
+            "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dari beberapa data hasil panen. Program juga memiliki fitur perhitungan diskon sebesar 10%.\n",
+            "\n",
+            "## Cara Menjalankan Program\n",
+            "\n",
+            "1. Pastikan Python sudah terpasang.\n",
+            "2. Buka terminal pada folder proyek.\n",
+            "3. Jalankan program dengan perintah:\n",
+            "\n",
+            "```bash\n",
+            "python panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add README.md"
+      ],
+      "metadata": {
+        "id": "jL3GgGYFUgyk"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \"Menambahkan README proyek\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZQwvebVSVow0",
+        "outputId": "d2266a72-78a5-4150-e156-5e2981fcabd6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[main 9753bad] Menambahkan README proyek\n",
+            " 1 file changed, 15 insertions(+)\n",
+            " create mode 100644 README.md\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git remote remove origin 2>/dev/null || true\n",
+        "!git remote add origin https://github.com/nasywaferlisha/sistem-panen-nasywa.git"
+      ],
+      "metadata": {
+        "id": "ZaL0ydUBVvRu"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git remote -v"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z8pocFnrV1AJ",
+        "outputId": "1d5beeb7-9848-4f1f-d531-d36fe1bd6ab6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "origin\thttps://github.com/nasywaferlisha/sistem-panen-nasywa.git (fetch)\n",
+            "origin\thttps://github.com/nasywaferlisha/sistem-panen-nasywa.git (push)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch -M main"
+      ],
+      "metadata": {
+        "id": "OkZVQZGnV3NV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5GBR7vxrV6iD",
+        "outputId": "25dc2886-a4bd-4254-9ac7-2bfa7e93f9db"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch main\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git log --oneline --decorate --all"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2dMVSWp0V-Ux",
+        "outputId": "077c7738-9f6a-4fc0-c681-d24bfffc4dc3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33m9753bad\u001b[m\u001b[33m (\u001b[m\u001b[1;36mHEAD\u001b[m\u001b[33m -> \u001b[m\u001b[1;32mmain\u001b[m\u001b[33m)\u001b[m Menambahkan README proyek\n",
+            "\u001b[33m045c6cf\u001b[m\u001b[33m (\u001b[m\u001b[1;32mfitur-diskon\u001b[m\u001b[33m)\u001b[m Menambahkan fungsi perhitungan diskon\n",
+            "\u001b[33m3340bff\u001b[m Menambahkan program penghitung total hasil panen\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile README.md\n",
+        "\n",
+        "# Sistem Pencatatan Hasil Panen Digital\n",
+        "\n",
+        "## Deskripsi\n",
+        "\n",
+        "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dari beberapa data hasil panen. Program juga memiliki fitur perhitungan diskon sebesar 10%.\n",
+        "\n",
+        "## Cara Menjalankan Program\n",
+        "\n",
+        "1. Pastikan Python sudah terpasang.\n",
+        "2. Buka terminal pada folder proyek.\n",
+        "3. Jalankan program dengan perintah:\n",
+        "\n",
+        "```bash\n",
+        "python panen.py"
+      ],
+      "metadata": {
+        "id": "5qontTe4e70S"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!cat README.md"
+      ],
+      "metadata": {
+        "id": "7RiBTP6BfKD7",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "outputId": "04b278d8-49b4-4e1a-c4a7-b943146335df"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (1550915883.py, line 5)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_4223/1550915883.py\"\u001b[0;36m, line \u001b[0;32m5\u001b[0m\n\u001b[0;31m    ```python\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile README.md\n",
+        "# Sistem Pencatatan Hasil Panen Digital\n",
+        "\n",
+        "## Deskripsi\n",
+        "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dan menghitung total hasil panen setelah diskon.\n",
+        "\n",
+        "## Cara Menjalankan Program\n",
+        "1. Pastikan Python sudah terpasang.\n",
+        "2. Buka terminal pada folder proyek.\n",
+        "3. Jalankan program dengan perintah:\n",
+        "\n",
+        "```bash\n",
+        "python panen.py\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9Qga6-iuPFku",
+        "outputId": "15415fc1-fd0e-4eda-b62e-e9016be5b331"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing README.md\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!cat README.md"
+      ],
+      "metadata": {
+        "id": "9Er9KCgJPLbP",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "86dfaaee-b7ea-4c28-cfed-f1489a8ab129"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "# Sistem Pencatatan Hasil Panen Digital\n",
+            "\n",
+            "## Deskripsi\n",
+            "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dan menghitung total hasil panen setelah diskon.\n",
+            "\n",
+            "## Cara Menjalankan Program\n",
+            "1. Pastikan Python sudah terpasang.\n",
+            "2. Buka terminal pada folder proyek.\n",
+            "3. Jalankan program dengan perintah:\n",
+            "\n",
+            "```bash\n",
+            "python panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "5tXKz7K1PLlU"
+      },
+      "source": [
+        "!cat README.md"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7vv3B2yJRIoA",
+        "outputId": "27c36608-ba59-48f8-8bd4-58811f837313"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "fatal: not a git repository (or any of the parent directories): .git\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%cd /content/sistem-panen"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ytTSP8VJRSoW",
+        "outputId": "2af52b40-5a00-4094-cb0f-5027fdd5bb8f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Errno 2] No such file or directory: '/content/sistem-panen'\n",
+            "/content\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!mkdir -p /content/sistem-panen"
+      ],
+      "metadata": {
+        "id": "M27TxXJgpfMc"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%cd /content/sistem-panen"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zAi_eOtSpo4P",
+        "outputId": "caef5c2d-8672-4346-f490-16d349332990"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "/content/sistem-panen\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile panen.py\n",
+        "hasil_panen = [10, 15, 20, 12]\n",
+        "total_panen = sum(hasil_panen)\n",
+        "\n",
+        "def hitung_diskon(total, persen):\n",
+        "    diskon = total * persen / 100\n",
+        "    return total - diskon\n",
+        "\n",
+        "persen_diskon = 10\n",
+        "total_setelah_diskon = hitung_diskon(total_panen, persen_diskon)\n",
+        "\n",
+        "print(\"Hasil panen:\", hasil_panen)\n",
+        "print(\"Total hasil panen:\", total_panen, \"kg\")\n",
+        "print(\"Diskon:\", persen_diskon, \"%\")\n",
+        "print(\"Total setelah diskon:\", total_setelah_diskon, \"kg\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PBhpqTchpqTr",
+        "outputId": "74dc346d-5780-4e0f-d872-c7c1aaf72248"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git init\n",
+        "!git branch -M main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i2HzL9B0psDc",
+        "outputId": "a3e242a2-5ff0-4130-b731-ca2013673566"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33mhint: Using 'master' as the name for the initial branch. This default branch name\u001b[m\n",
+            "\u001b[33mhint: is subject to change. To configure the initial branch name to use in all\u001b[m\n",
+            "\u001b[33mhint: of your new repositories, which will suppress this warning, call:\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: \tgit config --global init.defaultBranch <name>\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\u001b[m\n",
+            "\u001b[33mhint: 'development'. The just-created branch can be renamed via this command:\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: \tgit branch -m <name>\u001b[m\n",
+            "Initialized empty Git repository in /content/sistem-panen/.git/\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git config user.name \"Nasywa Ferlisha Putri\"\n",
+        "!git config user.email \"nasywaferlisha@apps.ipb.ac.id\""
+      ],
+      "metadata": {
+        "id": "m1bKTnCPptkU"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xqYN9PD_pvcD",
+        "outputId": "f3cf3aa4-eaf1-4500-a7ef-b3af13f03823"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch main\n",
+            "\n",
+            "No commits yet\n",
+            "\n",
+            "Untracked files:\n",
+            "  (use \"git add <file>...\" to include in what will be committed)\n",
+            "\t\u001b[31mpanen.py\u001b[m\n",
+            "\n",
+            "nothing added to commit but untracked files present (use \"git add\" to track)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add panen.py\n",
+        "!git commit -m \"Menambahkan program penghitung total hasil panen\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t-be_ccnpxmd",
+        "outputId": "652e6e90-0547-4be6-c04c-62cbb82297b5"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[main (root-commit) 23f8015] Menambahkan program penghitung total hasil panen\n",
+            " 1 file changed, 14 insertions(+)\n",
+            " create mode 100644 panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch -c fitur-diskon"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OfK1lSYop-1R",
+        "outputId": "235daf5e-85ec-4d0d-c61e-8d107e145984"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to a new branch 'fitur-diskon'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add panen.py\n",
+        "!git commit -m \"Menambahkan fungsi perhitungan diskon\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JjGYnxnrqAO0",
+        "outputId": "d186ffc7-22bc-49aa-c0ff-dd3dc602741c"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch fitur-diskon\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bCwLM9KkqEWp",
+        "outputId": "dc655789-2dfd-42e7-fa8f-9cad7001bc93"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to branch 'main'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git merge fitur-diskon"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4M7rHIFHqMH5",
+        "outputId": "63a19192-01be-4b29-b258-71acce6dcb3c"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Already up to date.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile README.md\n",
+        "# Sistem Pencatatan Hasil Panen Digital\n",
+        "\n",
+        "## Deskripsi\n",
+        "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dan menghitung total hasil panen setelah diskon.\n",
+        "\n",
+        "## Cara Menjalankan Program\n",
+        "1. Pastikan Python sudah terpasang.\n",
+        "2. Buka terminal pada folder proyek.\n",
+        "3. Jalankan program dengan perintah:\n",
+        "\n",
+        "python panen.py"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "P__A-ifVqNXb",
+        "outputId": "dda173ea-059d-4ee7-b962-23fcd80395f1"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing README.md\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!cat README.md"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BFZ8QokkqPGp",
+        "outputId": "bbb2b7c0-1577-44ed-c1bc-937e0badeb4e"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "# Sistem Pencatatan Hasil Panen Digital\n",
+            "\n",
+            "## Deskripsi\n",
+            "Proyek ini merupakan program Python sederhana untuk menghitung total hasil panen dan menghitung total hasil panen setelah diskon.\n",
+            "\n",
+            "## Cara Menjalankan Program\n",
+            "1. Pastikan Python sudah terpasang.\n",
+            "2. Buka terminal pada folder proyek.\n",
+            "3. Jalankan program dengan perintah:\n",
+            "\n",
+            "python panen.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add README.md\n",
+        "!git commit -m \"Menambahkan README proyek\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xynEcPvlqTC5",
+        "outputId": "eba4dbe9-0097-4836-817c-6f4948ba62f4"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[main c0f83cc] Menambahkan README proyek\n",
+            " 1 file changed, 11 insertions(+)\n",
+            " create mode 100644 README.md\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git remote add origin https://github.com/nasywaferlisha/sistem-panen-nasywa.git"
+      ],
+      "metadata": {
+        "id": "UM7jzKfAqW2u"
+      },
+      "execution_count": 15,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git remote -v"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cWb1c9UXqZQK",
+        "outputId": "a98c5a43-d7ac-45fa-d170-5e7cb17bb75d"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "origin\thttps://github.com/nasywaferlisha/sistem-panen-nasywa.git (fetch)\n",
+            "origin\thttps://github.com/nasywaferlisha/sistem-panen-nasywa.git (push)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git log --oneline --decorate --all"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-x2UN7n6qbZV",
+        "outputId": "03b4dfb4-b5cc-4b35-bfba-d86ca21501f6"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33mc0f83cc\u001b[m\u001b[33m (\u001b[m\u001b[1;36mHEAD\u001b[m\u001b[33m -> \u001b[m\u001b[1;32mmain\u001b[m\u001b[33m)\u001b[m Menambahkan README proyek\n",
+            "\u001b[33m23f8015\u001b[m\u001b[33m (\u001b[m\u001b[1;32mfitur-diskon\u001b[m\u001b[33m)\u001b[m Menambahkan program penghitung total hasil panen\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push -u origin main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mmzpd3hvq-5M",
+        "outputId": "4260c318-ecd4-46dd-afa8-31b7bcf16e57"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "fatal: could not read Username for 'https://github.com': No such device or address\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
